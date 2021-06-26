@@ -11,7 +11,7 @@ class Main extends JFrame {
         Grid grid;
 
         public App() {
-            setPreferredSize(new Dimension(950, 720));
+            setPreferredSize(new Dimension(500, 500));
             grid = new Grid();
         }
 
@@ -20,6 +20,8 @@ class Main extends JFrame {
             
             grid.paint(g, getMousePosition());
         }
+
+   
 
     }
 
