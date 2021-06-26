@@ -7,18 +7,35 @@ import java.awt.event.*;
 
 
 class Main extends JFrame {
-    
+    // actions
+    Action actionR;
+    Action actionSpace;
 
-    class App extends JPanel implements KeyListener {
-        
-        Grid grid;
+    // grid object
+    Grid grid;
+
+
+    class App extends JPanel {
         
 
         // here we set size of the window
         // and create a new grid object
         public App() {
-            // attach key listener to App object
-            addKeyListener(this); // for resetting grid
+            
+            // these are our keybindings
+            // aka key-bindings
+            actionR = new ActionR();
+            actionSpace = new ActionSpace();
+
+            // assign the r character to the Action 'actionR'
+            this.getInputMap().put(KeyStroke.getKeyStroke('r'), "actionR");
+            this.getActionMap().put("actionR", actionR); 
+
+            // assign "SPACE" to the action 'actionSpace'
+            this.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "actionSpace");
+            this.getActionMap().put("actionSpace", actionSpace); 
+
+            // creates new grid object and sets size of window
             setPreferredSize(new Dimension(500, 500));
             grid = new Grid();
             
@@ -30,36 +47,7 @@ class Main extends JFrame {
             grid.paint(g, getMousePosition());
         }
 
-        // used for detecting when a key is pressed
-        @Override
-        public void keyPressed(KeyEvent e) {
-            
-            int key = e.getKeyCode();
-
-            // R key restarts the app
-            if (key == KeyEvent.VK_R){
-                grid.resetGrid();
-            }
-
-            // space fills the grid
-            if (key == KeyEvent.VK_SPACE){
-                grid.fillGrid();
-            }
-            
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-            
-        }
-
-        @Override
-        public void keyTyped(KeyEvent e) {
-
-            
-        }
-
-
+      
     }
 
     public static void main(String[] args) throws Exception {
@@ -71,8 +59,6 @@ class Main extends JFrame {
     private Main() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         App canvas = new App();
-        // attach keylistener to canvas (which is an App object)
-        this.addKeyListener(canvas); // for ressting grid
         this.setContentPane(canvas);
         this.pack();
         this.setVisible(true);
@@ -84,6 +70,32 @@ class Main extends JFrame {
             this.repaint();
         }
     }
+
+    // handles when 'r' is pressed
+    public class ActionR extends AbstractAction{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+           
+            grid.resetGrid();
+        
+        }
+        
+    }
+
+    // handles when "SPACE" is pressed
+    public class ActionSpace extends AbstractAction{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+           
+            grid.fillGrid();
+        
+        }
+        
+
+    }
+
 
 
 }
