@@ -15,12 +15,17 @@ Initially this project was planned to be a random noise generator. Instead, I wi
 ## Table of Contents
 
 1. [Introduction](#Quick-Intro-To-The-Game-of-Life)
-	1.1. [Cell Arrangement](#Cell-arrangement)
-	1.2. [Rules to Life](#Rules)
+
+	1. [Cell Arrangement](#Cell-arrangement)
+
+	2. [Rules to Life](#Rules)
+
 2. [Core Features](#Core-features-and-Functionality)
-	2.1. [Button Assignments](#Key/Button-Assignments) 
-	2.2. [Considerations](#Considerations-for-the-Grid-and-Cells)
-	2.3. [State Machine](#State-Machine)
+  1. [Button Assignments](#Key/Button-Assignments) 
+	  
+  2. [Considerations](#Considerations-for-the-Grid-and-Cells)
+	  
+  3. [State Machine](#State-Machine)
 
 ## Quick intro to The Game of Life
 
