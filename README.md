@@ -13,10 +13,9 @@ Initially this project was planned to be a random noise generator. Instead, I wi
 	
 2. [Core Features](#Core-features-and-Functionality)
 	1. [Button Assignments](#Key-and-Button-Assignments) 
-	
 	2. [Considerations](#Considerations-for-the-Grid-and-Cells)
-	
 	3. [State Machine](#State-Machine)
+3. [Code & Implementation Details](#Implementation-Details)
 
 ## Quick intro to The Game of Life
 
@@ -167,3 +166,64 @@ And as mentioned earlier, the edge and corner cells will only be able to access 
 
 ### State Machine
 
+This program will have three states:
+
+1. Initialise
+2. Running
+3. Paused
+
+
+
+Essentially when we boot up the program it will be in the initialise state. When the space-bar is clicked, it will transition from the initialise state to running. Once we are in the running state, it won't be able to shift back to initialise, it will only be able to return to the paused state if the button for it is pressed. In the paused state we can transition to either the Initialise state by clicking the 'R' key, or we can transition back to running if the space-bar is pressed.
+
+![StateMachine](/home/mike/Code/JavaNoise/docs/StateMachine.png)
+
+**For the Initial state:**
+
+* We can:
+
+	* Add cells (left click)
+
+	* Remove cells (right click)
+
+	* Start the simulation (space-bar)
+	
+	* Reset the grid ('R' key)
+	
+	  
+
+**For the running state**:
+
+* We can:
+
+	* Pause the simulation (space-bar)
+
+* We cannot:
+
+	* Edit tiles (left or right click)
+	
+	* Reset the grid ('R' key)
+	
+	  
+
+**For the Paused State**:
+
+* We Can:
+
+	* Reset the grid ('R' key)
+	
+	* Resume the simulation (Space-bar)
+
+* We cannot:
+
+	* Edit tiles (left or right click)
+	
+	  
+
+The next section of this document will be implementation details, i.e. Code etc.
+
+
+
+## Implementation Details
+
+This section will be updated as development progresses... Time to start implementing...
