@@ -21,11 +21,12 @@ Initially this project was planned to be a random noise generator. Instead, I wi
 	2. [Rules to Life](#Rules)
 
 2. [Core Features](#Core-features-and-Functionality)
-  1. [Button Assignments](#Key/Button-Assignments) 
+	
+	1. [Button Assignments](#Key/Button-Assignments) 
 	  
-  2. [Considerations](#Considerations-for-the-Grid-and-Cells)
+ 	2. [Considerations](#Considerations-for-the-Grid-and-Cells)
 	  
-  3. [State Machine](#State-Machine)
+ 	3. [State Machine](#State-Machine)
 
 ## Quick intro to The Game of Life
 
