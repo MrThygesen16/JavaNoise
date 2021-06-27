@@ -12,7 +12,7 @@ Initially this project was planned to be a random noise generator. Instead, I wi
 	2. [Rules to Life](#Rules)
 	
 2. [Core Features](#Core-features-and-Functionality)
-	1. [Button Assignments](#Key/Button-Assignments) 
+	1. [Button Assignments](#Key-and-Button-Assignments) 
 	
 	2. [Considerations](#Considerations-for-the-Grid-and-Cells)
 	
@@ -79,7 +79,7 @@ Essentially this section will serve as a collection of must-have features that a
 
 
 
-### Key/Button Assignments
+### Key and Button Assignments
 
 As stated above, there will be user-interaction with the program. The following list details keys and their respective functions:
 
