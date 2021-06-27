@@ -79,8 +79,8 @@ Essentially this section will serve as a collection of must-have features that a
 
 1.  On start-up an empty grid of squares will appear on the screen.
 2.  Setting an initial state by editing the grid will be possible through:
-   * Adding squares by left clicking.
-   * Removing squares by right clicking.
+	* Adding squares by left clicking.
+	* Removing squares by right clicking.
 3.  Once set, starting the simulation will be possible by clicking a particular button.
 4.  If unhappy with how they are set, resetting the grid will be possible by clicking a particular button.
 5.  Once the simulation has started, pausing/stopping the simulation will be possible by clicking a particular button.
