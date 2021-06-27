@@ -82,6 +82,13 @@ Essentially this section will serve as a collection of must-have features that a
 As stated above, there will be user-interaction with the program. The following list details keys and their respective functions:
 
 * `Left Click`: Add cell
+
 * `Right Click`: Remove cell
+
 * `SPACE-BAR`: Start/Stop simulation
+
 * `R-key`: Reset simulation/clear grid 
+
+  
+
+### Further Considerations
