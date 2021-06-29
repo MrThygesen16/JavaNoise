@@ -15,13 +15,16 @@ class Main extends JFrame {
     Grid grid;
 
 
-    class App extends JPanel implements MouseListener {
+    class App extends JPanel implements MouseListener{
         
 
         // here we set size of the window
         // and create a new grid object
         public App() {
             
+            // mouse listener
+            this.addMouseListener(this);
+
             // these are our keybindings
             // aka key-bindings
             actionR = new ActionR();
@@ -47,6 +50,7 @@ class Main extends JFrame {
             grid.paint(g, getMousePosition());
         }
 
+
         /* 
 
             Below is mouseListener methods from the class we inheret
@@ -56,28 +60,37 @@ class Main extends JFrame {
         @Override
         public void mouseClicked(MouseEvent e) {
             
+            if (e.getButton() == MouseEvent.BUTTON1){ // BUTTON1 = LEFT CLICK
+                grid.mouseLeftClick(e.getX(), e.getY());
+            }
+            
+            if (e.getButton() == MouseEvent.BUTTON3){ // BUTTON3 = RIGHT CLICK
+                grid.mouseRightClick(e.getX(), e.getY());
+            }
             
         }
 
         @Override
-        public void mouseEntered(MouseEvent e) {
-            // we can leave blank as we do not need to use this method
+        public void mouseEntered(MouseEvent e) {            
         }
 
         @Override
-        public void mouseExited(MouseEvent e) {
-            // we can leave blank as we do not need to use this method
+        public void mouseExited(MouseEvent e) {            
         }
 
         @Override
-        public void mousePressed(MouseEvent e) {
-            // we can leave blank as we do not need to use this method
+        public void mousePressed(MouseEvent e) {           
         }
 
         @Override
-        public void mouseReleased(MouseEvent e) {
-            // we can leave blank as we do not need to use this method            
+        public void mouseReleased(MouseEvent e) {            
         }
+
+        /* 
+        
+            END MOUSE LISTENER METHODS
+        
+        */
 
       
     }

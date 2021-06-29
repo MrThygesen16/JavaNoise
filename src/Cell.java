@@ -8,7 +8,7 @@ public class Cell extends Rectangle {
     static int size = 35;
     Color colour;
 
-    // has the mouse hovered over or, is it active: (1), or inactive: (0)
+    // has the mouse hovered over or, is it active: (1), or inactive (0)
     boolean visited;
 
     // rowPos = x coord
@@ -42,15 +42,13 @@ public class Cell extends Rectangle {
         
         if(contains(mousePos)){
             
-            visited = true;
-
             mouseOver = true;
             // cell currently being hovered over by the mouse becomes grey
             g.setColor(Color.GRAY);
 
         } else {
 
-            // if a cell has been hovered over by the mouse it becomes black
+            // if the cell has been clicked: if clicked it is visited (1), if not it is not visited (0)
             if (visited){
                 g.setColor(Color.darkGray);
             } else{ // if the mouse has not hovered over a cell, it remains the default colour (white)

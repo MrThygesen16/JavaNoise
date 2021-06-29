@@ -55,5 +55,32 @@ public class Grid {
         }
     }
 
+    // handles left click and adds cells
+    public void mouseLeftClick(int x, int y){
+
+        for (int r = 0; r < rows; r++){
+            for (int c = 0; c < columns; c++){
+            
+                if (cells[r][c].contains(x, y)){
+                    cells[r][c].visited = true;
+                }
+            }
+        }
+    }
+
+    // handles right click and deletes cells
+    public void mouseRightClick(int x, int y){
+
+        for (int r = 0; r < rows; r++){
+            for (int c = 0; c < columns; c++){
+            
+                if (cells[r][c].contains(x, y)){
+                    cells[r][c].visited = false;
+                }
+            }
+        }
+    }
+
+    
    
 }
