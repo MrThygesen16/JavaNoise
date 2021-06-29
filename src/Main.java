@@ -119,7 +119,7 @@ class Main extends JFrame {
             if (grid.state == 1){
                 this.repaint();
                 try {
-                    Thread.sleep(1050); //TODO: change how this delay is handled
+                    Thread.sleep(650); //TODO: change how this delay is handled
                     // right now we are sleeping the thread to slow down the game
                     // otherwise it looks like a mess
                 } catch (InterruptedException e) {
