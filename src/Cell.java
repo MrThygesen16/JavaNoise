@@ -3,23 +3,29 @@ package src;
 import java.awt.*;
 
 public class Cell extends Rectangle {
-    // fields
-    static int size = 47;
+    
+    // how large each square cell will be in terms of length * width
+    static int size = 35;
     Color colour;
 
+    // has the mouse hovered over or, is it active: (1), or inactive: (0)
     boolean visited;
 
-    int xPos;
-    int yPos;
+    // rowPos = x coord
+    // colPos = y coord
+    int rowPos;
+    int colPos;
 
 
     //constructors
-    public Cell(int x, int y){
-        super(10+x*size, 10+y*size, size, size );
+    public Cell(int r, int c){
+        // off set the x and y coords by 10 so it looks better when drawn
+        super(10+r*size, 10+c*size, size, size);
         colour = Color.WHITE;
-        xPos = (x);
-        yPos = (y);
+        rowPos = r;
+        colPos = c;
 
+        // all cells are inactive by default
         visited = false;
     }
 
@@ -39,30 +45,33 @@ public class Cell extends Rectangle {
             visited = true;
 
             mouseOver = true;
-            // square becomes grey
+            // cell currently being hovered over by the mouse becomes grey
             g.setColor(Color.GRAY);
 
         } else {
-            // we set squar to default colour (white)
 
+            // if a cell has been hovered over by the mouse it becomes black
             if (visited){
                 g.setColor(Color.darkGray);
-            } else{
+            } else{ // if the mouse has not hovered over a cell, it remains the default colour (white)
                 g.setColor(colour);
             }
 
             
         }
 
-        // draw recttangle 
+        // draw cell using above colours 
         g.fillRect(x,y,size,size);
+
+        // this creates an outline of the cells
         g.setColor(Color.BLACK);
         g.drawRect(x,y,size,size);
 
-        // this is where we write the coordinates of the square if the most is in it
+        // this is where we write the coordinates of the square if the mouse is in it
         if (mouseOver){
             g.setColor(Color.GREEN);
-            g.drawString("[" + xPos + "," + yPos + "]", 18+size*xPos, 38+size*yPos);
+            g.setFont(new Font("TimesRoman", Font.PLAIN, 8));
+            g.drawString("[" + rowPos + "," + colPos + "]", 13+size*rowPos, 38+size*colPos);
         }
 
     }

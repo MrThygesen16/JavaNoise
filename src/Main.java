@@ -15,7 +15,7 @@ class Main extends JFrame {
     Grid grid;
 
 
-    class App extends JPanel {
+    class App extends JPanel implements MouseListener {
         
 
         // here we set size of the window
@@ -36,7 +36,7 @@ class Main extends JFrame {
             this.getActionMap().put("actionSpace", actionSpace); 
 
             // creates new grid object and sets size of window
-            setPreferredSize(new Dimension(500, 500));
+            setPreferredSize(new Dimension(725, 725));
             grid = new Grid();
             
         }
@@ -45,6 +45,38 @@ class Main extends JFrame {
         public void paint(Graphics g) {
             // paint grid object we created
             grid.paint(g, getMousePosition());
+        }
+
+        /* 
+
+            Below is mouseListener methods from the class we inheret
+        
+        */
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            
+            
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            // we can leave blank as we do not need to use this method
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            // we can leave blank as we do not need to use this method
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            // we can leave blank as we do not need to use this method
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            // we can leave blank as we do not need to use this method            
         }
 
       
@@ -65,6 +97,7 @@ class Main extends JFrame {
         this.setTitle("Java Noise Project"); // set title of app
     }
 
+    // responsible for causing the canvas to be repainted
     public void run() {
         while (true) {
             this.repaint();

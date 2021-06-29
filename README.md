@@ -216,9 +216,13 @@ Essentially when we boot up the program it will be in the initialise state. When
 
 * We cannot:
 
-	* Edit tiles (left or right click)
-	
-	  
+	* Edit tiles (left click or right click)
+
+
+
+To implement this State Machine I will implement the State Pattern (A type of Design Pattern)...
+
+
 
 The next section of this document will be implementation details, i.e. Code etc.
 
