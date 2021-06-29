@@ -117,10 +117,12 @@ class Main extends JFrame {
 
             // if we are in the running state we add a delay to drawing the cells
             if (grid.state == 1){
+                this.repaint();
                 try {
-                    Thread.sleep(750);
+                    Thread.sleep(1050); //TODO: change how this delay is handled
+                    // right now we are sleeping the thread to slow down the game
+                    // otherwise it looks like a mess
                 } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 } 
                 this.repaint();
@@ -137,7 +139,7 @@ class Main extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            // we can only reset grid if in init or paused state
             if (grid.state == 0){
                 grid.resetGrid();
             }
@@ -152,12 +154,17 @@ class Main extends JFrame {
         
     }
 
-    // handles when "SPACE" is pressed
+    // handles when "SPACE" it is pressed
     public class ActionSpace extends AbstractAction{
 
         @Override
         public void actionPerformed(ActionEvent e) {
             
+            // changes the state on space click
+            // state 0 is init
+            // state 1 is running
+            // state 2 is paused
+
             if (grid.state == 0){
                 grid.state = 1;
             } else if (grid.state == 1){
@@ -165,11 +172,7 @@ class Main extends JFrame {
             } else if (grid.state == 2){
                 grid.state = 1;
             }
-            
-        
         }
-        
-
     }
 
 

@@ -54,14 +54,15 @@ public class Grid {
                 if (state == 1){
                     int count = 0;
                     if ((r > 0 && r < rows - 1) && (c > 0 && c < columns - 1)){
+                                
                         count = countNeighbours(r, c);
 
-                        if (count < 2 ){
-                            cells[r][c].visited = false;
-                        } else if (count > 3){
-                            cells[r][c].visited = false;
-                        } else if (count == 2 || count == 3) {
+                        if (cells[c][r].visited == false && count == 2) {
                             cells[r][c].visited = true;
+                        } else if(cells[c][r].visited && count == 3){
+                            cells[r][c].visited = true;
+                        } else {
+                            cells[r][c].visited = false;
                         }
                     }
                 }
