@@ -72,7 +72,7 @@ public class Cell extends Rectangle {
       
 
         // this is where we write the coordinates of the square if the mouse is in it
-        if (mouseOver){
+        if (mouseOver && s == 0){
             g.setColor(Color.GREEN);
             g.setFont(new Font("TimesRoman", Font.PLAIN, 8));
             g.drawString("[" + rowPos + "," + colPos + "]", 13+size*rowPos, 38+size*colPos);

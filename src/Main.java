@@ -112,8 +112,23 @@ class Main extends JFrame {
 
     // responsible for causing the canvas to be repainted
     public void run() {
+        
         while (true) {
-            this.repaint();
+
+            // if we are in the running state we add a delay to drawing the cells
+            if (grid.state == 1){
+                try {
+                    Thread.sleep(750);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } 
+                this.repaint();
+            } else { 
+                // if we are not in running state draw as per normal
+                this.repaint();
+            }
+        
         }
     }
 

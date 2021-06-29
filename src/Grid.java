@@ -50,9 +50,70 @@ public class Grid {
         for(int r = 0; r < rows; r++){
             for(int c = 0; c < columns; c++){
                 cells[r][c].paint(g, mousePos, state);
+
+                if (state == 1){
+                    int count = 0;
+                    if ((r > 0 && r < rows - 1) && (c > 0 && c < columns - 1)){
+                        count = countNeighbours(r, c);
+
+                        if (count < 2 ){
+                            cells[r][c].visited = false;
+                        } else if (count > 3){
+                            cells[r][c].visited = false;
+                        } else if (count == 2 || count == 3) {
+                            cells[r][c].visited = true;
+                        }
+                    }
+                }
             }
         }
 
+    }
+
+    public int countNeighbours(int x, int y){
+        int count = 0;
+
+        // one left of current square
+        if (cells[x-1][y].visited){
+            count = count +1;
+        }
+
+        // one right of current square
+        if (cells[x+1][y].visited){
+            count = count + 1;
+        }
+
+        // onr below
+        if (cells[x][y+1].visited){
+            count = count + 1;
+        }
+
+        // one above
+        if (cells[x][y-1].visited){
+            count = count + 1;
+        }
+
+        // top left diag
+        if (cells[x-1][y-1].visited){
+            count = count + 1;
+        }
+
+        // bottom right diag
+        if (cells[x+1][y+1].visited){
+            count = count + 1;
+        }
+
+        // top right diag
+        if (cells[x-1][y+1].visited){
+            count = count + 1;
+        }
+
+        // bottom left diag
+        if (cells[x+1][y-1].visited){
+            count = count + 1;
+        }
+
+        return count;
     }
 
     // all cells have their visited boolean set to false
