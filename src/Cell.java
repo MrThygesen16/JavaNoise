@@ -31,7 +31,7 @@ public class Cell extends Rectangle {
 
 
     //methods
-    void paint(Graphics g, Point mousePos){
+    void paint(Graphics g, Point mousePos, int s){
         
         // boolean used as a flag
         // we want to draw some text over the square
@@ -61,9 +61,15 @@ public class Cell extends Rectangle {
         // draw cell using above colours 
         g.fillRect(x,y,size,size);
 
+        // we pass through the state of the grid into the cell object
+        // if we are in init state we show the grid to assist with drawing
+        // otherwise, we show no grid
+        if (s == 0){
+            g.setColor(Color.BLACK);
+            g.drawRect(x,y,size,size);
+        }
         // this creates an outline of the cells
-        g.setColor(Color.BLACK);
-        g.drawRect(x,y,size,size);
+      
 
         // this is where we write the coordinates of the square if the mouse is in it
         if (mouseOver){

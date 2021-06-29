@@ -39,7 +39,7 @@ class Main extends JFrame {
             this.getActionMap().put("actionSpace", actionSpace); 
 
             // creates new grid object and sets size of window
-            setPreferredSize(new Dimension(725, 725));
+            setPreferredSize(new Dimension(800, 725));
             grid = new Grid();
             
         }
@@ -122,8 +122,16 @@ class Main extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-           
-            grid.resetGrid();
+            
+            if (grid.state == 0){
+                grid.resetGrid();
+            }
+
+            if (grid.state == 2){
+                grid.resetGrid();
+                grid.state = 0;
+            }
+            
         
         }
         
@@ -134,8 +142,15 @@ class Main extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-           
-            grid.fillGrid();
+            
+            if (grid.state == 0){
+                grid.state = 1;
+            } else if (grid.state == 1){
+                grid.state = 2;
+            } else if (grid.state == 2){
+                grid.state = 1;
+            }
+            
         
         }
         
