@@ -35,6 +35,8 @@ public class Grid {
 
     // painting the grid of squares
     public void paint(Graphics g, Point mousePos){
+
+        Cell[][] newGen = cells;
         
         // tell us what state we are currently in
         g.drawString("State: " + state, 720, 25);
@@ -57,17 +59,21 @@ public class Grid {
                                 
                         count = countNeighbours(r, c);
 
-                        if (cells[c][r].visited == false && count == 2) {
-                            cells[r][c].visited = true;
-                        } else if(cells[c][r].visited && count == 3){
-                            cells[r][c].visited = true;
+                        if (cells[c][r].visited == false && count == 3) {
+                            newGen[r][c].visited = true;
+                        } else if(cells[c][r].visited && (count < 2 || count > 3 )){
+                            newGen[r][c].visited = false;
                         } else {
-                            cells[r][c].visited = false;
+                            newGen[r][c].visited = cells[c][r].visited;
                         }
                     }
+
+
                 }
             }
         }
+
+        cells = newGen;
 
     }
 

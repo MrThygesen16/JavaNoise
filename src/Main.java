@@ -117,15 +117,18 @@ class Main extends JFrame {
 
             // if we are in the running state we add a delay to drawing the cells
             if (grid.state == 1){
-                this.repaint();
                 try {
-                    Thread.sleep(650); //TODO: change how this delay is handled
+                    Thread.sleep(415); //TODO: change how this delay is handled
                     // right now we are sleeping the thread to slow down the game
                     // otherwise it looks like a mess
+
+                    this.repaint();
+
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } 
-                this.repaint();
+              
             } else { 
                 // if we are not in running state draw as per normal
                 this.repaint();
