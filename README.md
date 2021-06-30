@@ -1,5 +1,7 @@
 # Java Noise DevLog 
 
+This is a project that I began working on as a side-project during my Uni break.
+
 Initially this project was planned to be a random noise generator. Instead, I will attempt to re-create **Conway's Game of Life**.  This document will be a mix of explaining my approach/design, and notes on Conway's Game of Life. Essentially, this logbook will be updated based on the current stage of development for the project. I decided on keeping the name "Java Noise", as it seemed fitting. At a first glance The Game of Life seems to be nothing more than a random mess of pixels on the screen. Hopefully this project can show that it's much more than that.
 
 If you are already familiar with the game of life, you can skip directly to [Section 3](#Implementation-Details) for a detailed write up of the project.
