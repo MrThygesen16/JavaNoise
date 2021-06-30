@@ -108,7 +108,7 @@ First of all, the grid will be stored using a 2-dimensional array of values. For
 
 The plan is for each redraw that takes place, we iterate through every cell and check the status of their neighbours. Each cell will only handle the drawing and state of itself, so doing this via the grid seems like the easiest approach. As mentioned earlier, we check the eight neighbours for each cell. However, there are a few cases where we cannot do so. For example `(0, 0)`, `(1, 3)`, and `(3, 1)`. The cells in the middle `(1, 1)`, `(1, 2)`, `(2, 1)`, and `(2, 2)` do not have this issue. From this we can see there are a few conditions we need to account for.
 
-![](/home/mike/Code/JavaNoise/docs/GOL.png)
+![](https://raw.githubusercontent.com/MrThygesen16/JavaNoise/main/docs/GOL.png)
 
 As we can see, in the diagram above, there are four cases to be accounted for :
 
@@ -180,7 +180,7 @@ This program will have three states:
 
 Essentially when we boot up the program it will be in the initialise state. When the space-bar is clicked, it will transition from the initialise state to running. Once we are in the running state, it won't be able to shift back to initialise, it will only be able to return to the paused state if the button for it is pressed. In the paused state we can transition to either the Initialise state by clicking the 'R' key, or we can transition back to running if the space-bar is pressed.
 
-![StateMachine](/home/mike/Code/JavaNoise/docs/StateMachine.png)
+![StateMachine](https://raw.githubusercontent.com/MrThygesen16/JavaNoise/main/docs/StateMachine.png)
 
 **For the Initial state:**
 
